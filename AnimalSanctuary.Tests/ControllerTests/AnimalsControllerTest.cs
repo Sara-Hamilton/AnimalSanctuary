@@ -117,5 +117,6 @@ namespace AnimalSanctuary.Tests.ControllerTests
             Assert.IsInstanceOfType(resultView, typeof(ViewResult));
             Assert.IsInstanceOfType(model, typeof(Animal));
         }
+
     }
 }

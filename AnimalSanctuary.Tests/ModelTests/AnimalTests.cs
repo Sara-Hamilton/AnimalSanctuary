@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnimalSanctuary.Models;
+
 
 namespace AnimalSanctuary.Tests
 {
     [TestClass]
-    class AnimalTests
+    public class AnimalTests
     {
         [TestMethod]
         public void GetName_ReturnsAnimalName_String()
