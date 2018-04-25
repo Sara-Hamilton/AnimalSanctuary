@@ -29,7 +29,7 @@ namespace AnimalSanctuary.Models
             }
             else
             {
-                Item newVeterinarian = (Veterinarian)otherVeterinarian;
+                Veterinarian newVeterinarian = (Veterinarian)otherVeterinarian;
                 return this.VeterinarianId.Equals(newVeterinarian.VeterinarianId);
             }
         }
