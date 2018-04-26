@@ -14,6 +14,8 @@ namespace AnimalSanctuary.Tests.ControllerTests
     {
         Mock<IVeterinarianRepository> vetMock = new Mock<IVeterinarianRepository>();
         Mock<IAnimalRepository> mock = new Mock<IAnimalRepository>();
+        EFAnimalRepository dbAnimal = new EFAnimalRepository(new TestDbContext());
+        EFVeterinarianRepository dbVet = new EFVeterinarianRepository(new TestDbContext());
 
         private void DbSetup()
         {
@@ -116,6 +118,22 @@ namespace AnimalSanctuary.Tests.ControllerTests
             //Assert
             Assert.IsInstanceOfType(resultView, typeof(ViewResult));
             Assert.IsInstanceOfType(model, typeof(Animal));
+        }
+
+        [TestMethod]
+        public void DB_CreatesNewEntries_Collection()
+        {
+            //Arrange
+            AnimalsController controller = new AnimalsController(dbAnimal);
+            Animal testAnimal = new Animal();
+            testAnimal.Name = "testAnimal";
+
+            //Act
+            controller.Create(testAnimal);
+            var collection = (controller.Index() as ViewResult).ViewData.Model as List<Animal>;
+
+            //Assert
+            CollectionAssert.Contains(collection, testAnimal);
         }
 
     }

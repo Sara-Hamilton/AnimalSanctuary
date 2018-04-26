@@ -9,7 +9,17 @@ namespace AnimalSanctuary.Models
 {
     public class EFVeterinarianRepository : IVeterinarianRepository
     {
-        AnimalSanctuaryContext db = new AnimalSanctuaryContext();
+        AnimalSanctuaryContext db;
+
+        public EFVeterinarianRepository()
+        {
+            db = new AnimalSanctuaryContext();
+        }
+
+        public EFVeterinarianRepository(AnimalSanctuaryContext thisDb)
+        {
+            db = thisDb;
+        }
 
         public IQueryable<Veterinarian> Veterinarians
         { get { return db.Veterinarians; } }
