@@ -22,5 +22,19 @@ namespace AnimalSanctuary.Tests
 
         }
 
+        [TestMethod]
+        public void GetSpecies_ReturnsAnimalSpecies_String()
+        {
+            //Arrange
+            var testAnimal = new Animal();
+            testAnimal.Species = "Lion";
+
+            //Act
+            var result = testAnimal.Species;
+
+            //Assert
+            Assert.AreEqual("Lion", result);
+        }
+
     }
 }

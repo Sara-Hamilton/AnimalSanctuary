@@ -136,7 +136,9 @@ namespace AnimalSanctuary.Tests.ControllerTests
         {
             //Arrange
             AnimalsController controller = new AnimalsController(dbAnimal);
+            Veterinarian testVeterinarian = new Veterinarian();
             Animal testAnimal = new Animal();
+            testAnimal.Veterinarian = testVeterinarian;
             testAnimal.Name = "testAnimal";
 
             //Act

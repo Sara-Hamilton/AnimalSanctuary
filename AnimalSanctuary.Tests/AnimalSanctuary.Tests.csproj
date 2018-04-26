@@ -17,8 +17,4 @@
     <ProjectReference Include="..\AnimalSanctuary\AnimalSanctuary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Testtests\" />
-  </ItemGroup>
-
 </Project>
