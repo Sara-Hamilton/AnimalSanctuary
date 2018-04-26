@@ -2,7 +2,7 @@
 
 namespace AnimalSanctuary.Models
 {
-    class TestDbContext : AnimalSanctuaryContext
+    public class TestDbContext : AnimalSanctuaryContext
     {
         public override DbSet<Animal> Animals { get; set; }
         public override DbSet<Veterinarian> Veterinarians { get; set; }

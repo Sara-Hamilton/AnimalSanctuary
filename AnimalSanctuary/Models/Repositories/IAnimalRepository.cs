@@ -11,5 +11,6 @@ namespace AnimalSanctuary.Models.Repositories
         Animal Save(Animal animal);
         Animal Edit(Animal animal);
         void Remove(Animal animal);
+        void DeleteAll();
     }
 }

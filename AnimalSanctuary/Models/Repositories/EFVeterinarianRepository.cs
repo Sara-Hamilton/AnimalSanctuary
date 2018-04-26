@@ -43,5 +43,11 @@ namespace AnimalSanctuary.Models
             db.Veterinarians.Remove(veterinarian);
             db.SaveChanges();
         }
+
+        public void DeleteAll()
+        {
+            db.Veterinarians.RemoveRange(db.Veterinarians);
+            db.SaveChanges();
+        }
     }
 }

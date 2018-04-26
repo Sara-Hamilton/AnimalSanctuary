@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnimalSanctuary.Models;
 
-
 namespace AnimalSanctuary.Tests
 {
     [TestClass]
     public class AnimalTests
     {
+
         [TestMethod]
         public void GetName_ReturnsAnimalName_String()
         {

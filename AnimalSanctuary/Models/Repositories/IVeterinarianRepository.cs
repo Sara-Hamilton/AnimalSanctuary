@@ -11,5 +11,6 @@ namespace AnimalSanctuary.Models.Repositories
         Veterinarian Save(Veterinarian veterinarian);
         Veterinarian Edit(Veterinarian veterinarian);
         void Remove(Veterinarian veterinarian);
+        void DeleteAll();
     }
 }

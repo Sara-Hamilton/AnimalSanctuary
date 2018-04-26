@@ -6,16 +6,23 @@ using AnimalSanctuary.Controllers;
 using Moq;
 using System.Linq;
 using AnimalSanctuary.Models.Repositories;
+using System;
 
 namespace AnimalSanctuary.Tests.ControllerTests
 {
     [TestClass]
-    public class AnimalsControllerTest
+    public class AnimalsControllerTest : IDisposable
     {
         Mock<IVeterinarianRepository> vetMock = new Mock<IVeterinarianRepository>();
         Mock<IAnimalRepository> mock = new Mock<IAnimalRepository>();
         EFAnimalRepository dbAnimal = new EFAnimalRepository(new TestDbContext());
         EFVeterinarianRepository dbVet = new EFVeterinarianRepository(new TestDbContext());
+
+        public void Dispose()
+        {
+            dbAnimal.DeleteAll();
+            dbVet.DeleteAll();
+        }
 
         private void DbSetup()
         {
@@ -30,7 +37,11 @@ namespace AnimalSanctuary.Tests.ControllerTests
                 new Animal{AnimalId = 1, Name = "Percy", Species = "penguin", Sex = "M", HabitatType = "Arctic", MedicalEmergency = false, VeterinarianId = 1},
                 new Animal{AnimalId = 1, Name = "Ginny", Species = "giraffe", Sex = "F", HabitatType = "plains", MedicalEmergency = false, VeterinarianId = 1},
             }.AsQueryable());
+
+            
         }
+
+            
 
         [TestMethod]
         public void Mock_GetViewResultIndex_ActionResult() // Confirms route returns view
