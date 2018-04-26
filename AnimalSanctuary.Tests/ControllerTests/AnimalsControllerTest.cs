@@ -38,10 +38,10 @@ namespace AnimalSanctuary.Tests.ControllerTests
                 new Animal{AnimalId = 1, Name = "Ginny", Species = "giraffe", Sex = "F", HabitatType = "plains", MedicalEmergency = false, VeterinarianId = 1},
             }.AsQueryable());
 
-            
+
         }
 
-            
+
 
         [TestMethod]
         public void Mock_GetViewResultIndex_ActionResult() // Confirms route returns view
@@ -146,6 +146,21 @@ namespace AnimalSanctuary.Tests.ControllerTests
             //Assert
             CollectionAssert.Contains(collection, testAnimal);
         }
+
+        //[TestMethod]
+        //public void GetAll_DbStartsEmpty_0()
+        //{
+        //    //Arrange
+        //    //Act
+        //    Mock<IAnimalRepository> mock = new Mock<IAnimalRepository>();
+        //    List<Animal> animals = mock.Animals;
+        //    int result = animals.Count;
+
+
+        //    //Assert
+        //    Assert.AreEqual(0, result);
+        //}
+
 
     }
 }
