@@ -154,10 +154,12 @@ namespace AnimalSanctuary.Tests.ControllerTests
         {
             //Arrange
             //Act
-            int result = dbAnimal.Animals.ToList().Count;
+            int animalResult = dbAnimal.Animals.ToList().Count;
+            int vetResult = dbVet.Veterinarians.ToList().Count;
 
             //Assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(0, animalResult);
+            Assert.AreEqual(0, vetResult);
         }
 
     }
