@@ -149,20 +149,16 @@ namespace AnimalSanctuary.Tests.ControllerTests
             CollectionAssert.Contains(collection, testAnimal);
         }
 
-        //[TestMethod]
-        //public void GetAll_DbStartsEmpty_0()
-        //{
-        //    //Arrange
-        //    //Act
-        //    Mock<IAnimalRepository> mock = new Mock<IAnimalRepository>();
-        //    List<Animal> animals = mock.Animals;
-        //    int result = animals.Count;
+        [TestMethod]
+        public void DB_DbStartsEmpty_0()
+        {
+            //Arrange
+            //Act
+            int result = dbAnimal.Animals.ToList().Count;
 
-
-        //    //Assert
-        //    Assert.AreEqual(0, result);
-        //}
-
+            //Assert
+            Assert.AreEqual(0, result);
+        }
 
     }
 }
